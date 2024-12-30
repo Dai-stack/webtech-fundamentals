@@ -18,9 +18,8 @@ func handleAdd(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 	todo := r.Form.Get("todo")
 	todoList = append(todoList, todo)
-	http.Redirect(w, r, "/todo", 303) // <1>
+	http.Redirect(w, r, "/todo", 303) // <1>/add postできたらRedirectし、getでアクセスしなおす
 }
-
 
 func main() {
 	http.Handle("/static/",

@@ -23,9 +23,9 @@ func handleAdd(w http.ResponseWriter, r *http.Request) { // <1>
 func main() {
 	http.Handle("/static/",
 		http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
-
+	// /todoというパスでアクセスがきたとき
 	http.HandleFunc("/todo", handleTodo)
-
+	// /addというパスでアクセスがきたとき
 	http.HandleFunc("/add", handleAdd) // <2>
 
 	err := http.ListenAndServe(":8080", nil)
