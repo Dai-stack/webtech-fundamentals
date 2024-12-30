@@ -17,7 +17,7 @@ func handleTodo(w http.ResponseWriter, r *http.Request) { // <5>
 func main() {
 	todoList = append(todoList, "顔を洗う", "朝食を食べる", "歯を磨く") // <2>
 
-	// １つ目のstatic→クライアントがアクセ　するURLパス　ファイルシステム上で静的ファイルを探すための基点
+	// １つ目のstatic→クライアントがアクセスするURLパス　ファイルシステム上で静的ファイルを探すための基点
 	// 2つ目のstatic→サーバー側のファイルが存在するディレクトリ名
 	http.Handle("/static/", //
 		http.StripPrefix("/static/", http.FileServer(http.Dir("static")))) // <3>
